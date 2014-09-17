@@ -15,7 +15,6 @@ int geraIndex(char Nome[100]){
 void gravaAgenda(char Nome[100], char Tel[20], char End[20]){
 	int index = geraIndex(Nome);
 	Agenda[index][0] = *Tel;
-	//strcpy(Agenda[index][1],End);
 	Agenda[index][1] = *End;
 }
 
@@ -58,8 +57,6 @@ int main(){
 		        	printf("Digite um Nome: ");
 				scanf("%s", Nome);
 				consultaAgenda(Nome, Tel, End);
-				/*char *i;
-				i = strsok(Info,'|');*/
 				printf("\nDados da busca:\nO nome e: %s\nO Telefone e: %s\nO End e: %s\n", Nome, Tel, End);
 			break;
 
