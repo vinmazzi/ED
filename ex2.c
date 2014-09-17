@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char Agenda[100][20+1];
+char Agenda[100][2];
 char Nome[100],End[20+1],Tel[20+1],Info[100+1];
 
 int geraIndex(char Nome[100]){
@@ -14,16 +14,16 @@ int geraIndex(char Nome[100]){
 
 void gravaAgenda(char Nome[100], char Tel[20+1], char End[20+1]){
 	int index = geraIndex(Nome);
-	strcpy(Info,Tel);
-	strcpy(Info,"|");
-	strcpy(Info,End);
-	strcpy(Agenda[index],Info);
+	strcpy(Agenda[index],Tel);
+	strcpy(Agenda[index],End);
 }
 
-void consultaAgenda(char Nome[100], char* Info){
+void consultaAgenda(char Nome[100], char* Tel,char* End){
 	
 	int index = geraIndex(Nome);
-	strcpy(Info, Agenda[index]);
+	strcpy(Tel, Agenda[index]);
+	strcpy(End, Agenda[index]);
+	
 }
 
 void chamarCadastro(){
@@ -54,12 +54,12 @@ int main(){
 			break;
 
 			case 2 :
-		        	qualquer merda printf("Digite um Nome: ");
+		        	printf("Digite um Nome: ");
 				scanf("%s", Nome);
-				consultaAgenda(Nome, Info);
-				char *i;
-				i = strsep(Info,'|');
-				printf("\nDados da busca:\nO nome e: %s\nO Telefone e: %s\nO End e: %s\n", Nome, i[0],i[1]);
+				consultaAgenda(Nome, Tel, End);
+				/*char *i;
+				i = strsok(Info,'|');*/
+				printf("\nDados da busca:\nO nome e: %s\nO Telefone e: %s\nO End e: %s\n", Nome, Tel, End);
 			break;
 
 			case 3 :
