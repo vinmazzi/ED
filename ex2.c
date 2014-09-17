@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
-char Agenda[100][2];
-char Nome[100],End[20+1],Tel[20+1],Info[100+1];
+char Agenda[100][3];
+char Nome[100],End[20],Tel[20],Info[100];
 
 int geraIndex(char Nome[100]){
 	int index = 0;
@@ -12,17 +12,18 @@ int geraIndex(char Nome[100]){
 	return index;	
 }
 
-void gravaAgenda(char Nome[100], char Tel[20+1], char End[20+1]){
+void gravaAgenda(char Nome[100], char Tel[20], char End[20]){
 	int index = geraIndex(Nome);
-	strcpy(Agenda[index],Tel);
-	strcpy(Agenda[index],End);
+	Agenda[index][0] = *Tel;
+	//strcpy(Agenda[index][1],End);
+	Agenda[index][1] = *End;
 }
 
 void consultaAgenda(char Nome[100], char* Tel,char* End){
 	
 	int index = geraIndex(Nome);
-	strcpy(Tel, Agenda[index]);
-	strcpy(End, Agenda[index]);
+	*Tel = Agenda[index][0];
+	*End = Agenda[index][1];
 	
 }
 
