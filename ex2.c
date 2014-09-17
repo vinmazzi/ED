@@ -54,7 +54,7 @@ int main(){
 			break;
 
 			case 2 :
-		        	printf("Digite um Nome: ");
+		        	qualquer merda printf("Digite um Nome: ");
 				scanf("%s", Nome);
 				consultaAgenda(Nome, Info);
 				char *i;
